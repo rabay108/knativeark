@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: helloworld-nodejs
+  namespace: beast-idp-demo
+spec:
+  template:
+    spec:
+      containers:
+      - image: docker.io/rabay108/helloworld-nodejs
+        env:
+        - name: TARGET
+          value: "TestUma Node.js Sample v1"
