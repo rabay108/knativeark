@@ -1,13 +1,13 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: helloworld-nodejs
+  name: login-nodejs
   namespace: beast-idp-demo
 spec:
   template:
     spec:
       containers:
-      - image: docker.io/rabay108/helloworld-nodejs
+      - image: docker.io/rabay108/login-nodejs
         env:
         - name: TARGET
-          value: "TestUma Node.js Sample v1"
+          value: "Login test push Node.js v1"
