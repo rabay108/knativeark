@@ -1,4 +1,14 @@
-# Hello World - Node.js
+# Simple login - Node.js
+Added login function (Ignore the rest of the text below for now) 
+
+login post will return the following retrieving user and password from Basic authoriztion headers; 
+{
+    "sub": "abayadmin",
+    "name": "admintest",
+    "user": "abayadmin",
+    "password": "Abayrk1$"
+}
+
 
 A simple web app written in Node.js that you can use for testing. It reads in an
 env variable `TARGET` and prints "Hello \${TARGET}!". If TARGET is not
