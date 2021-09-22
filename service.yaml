@@ -10,4 +10,4 @@ spec:
       - image: docker.io/rabay108/login-nodejs
         env:
         - name: TARGET
-          value: "Login test push Node.js v1"
+          value: "Login Get passing fields Test Node.js "

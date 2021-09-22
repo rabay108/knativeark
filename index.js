@@ -9,17 +9,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.status(200).send(JSON.stringify({sub:"abayadmin", name:"admintest"}));
-});
-
-app.post('/login', (req, res) => {
   var authHeader = req.headers.authorization;
   var auth = new Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
   var user = auth[0];
   var pass = auth[1];
   res.setHeader('Content-Type', 'application/json');
-  res.status(200).send(JSON.stringify({sub:"abayadmin", name:"admintest",user:user,password:pass }));
+  res.status(200).send(JSON.stringify({sub:user, name:pass}));
+});
+
+app.post('/loginpost', (req, res) => {
+  var authHeader = req.headers.authorization;
+  var auth = new Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
+  var user = auth[0];
+  var pass = auth[1];
+  res.setHeader('Content-Type', 'application/json');
+  res.status(200).send(JSON.stringify({sub:"postadmin", name:"Post admintest",user:user,password:pass }));
 });
 
 const port = process.env.PORT || 8080;
