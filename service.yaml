@@ -5,7 +5,11 @@ metadata:
   namespace: beast-idp-demo
 spec:
   template:
-    spec:
+    metadata:
+      annotations:
+        # the minimum number of pods to scale down to
+        autoscaling.knative.dev/minScale: "1"
+    spec:	
       containers:
       - image: docker.io/rabay108/login-nodejs
         env:
